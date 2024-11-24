@@ -6,7 +6,7 @@ from forms.form_master import MasterPanel
 
 class App:
     
-    
+    #Login
     def verificar(self):
         usu = self.usuario.get()
         password = self.password.get()        
