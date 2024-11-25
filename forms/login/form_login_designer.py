@@ -1,20 +1,16 @@
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk
 from tkinter.font import BOLD
 import util.generic as utl
-from forms.form_master import MasterPanel
 
-class App:
+
+class FormLoginDesigner:
     
-    #Login
     def verificar(self):
-        usu = self.usuario.get()
-        password = self.password.get()        
-        if(usu == "root" and password == "1234") :
-            self.ventana.destroy()
-            MasterPanel()
-        else:
-            messagebox.showerror(message="La contraseña no es correcta",title="Mensaje")           
+        pass 
+
+    def userRegister(self):
+        pass          
                       
     def __init__(self):        
         self.ventana = tk.Tk()                             
@@ -61,8 +57,12 @@ class App:
         inicio = tk.Button(frame_form_fill,text="Iniciar sesion",font=('Times', 15,BOLD),bg='black', bd=0,fg="#fff",command=self.verificar)
         inicio.pack(fill=tk.X, padx=20,pady=20)        
         inicio.bind("<Return>", (lambda event: self.verificar()))
+
+        inicio = tk.Button(frame_form_fill, text="Registrar usuario", font=(
+            'Times', 15), bg='#0392fb', bd=0, fg="#fcfcfc", command=self.userRegister)
+        inicio.pack(fill=tk.X, padx=20, pady=20)
+        inicio.bind("<Return>", (lambda event: self.userRegister()))
+
         #end frame_form_fill
         self.ventana.mainloop()
         
-if __name__ == "__main__":
-   App()
